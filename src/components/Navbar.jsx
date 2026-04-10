@@ -34,7 +34,7 @@ export default function Navbar() {
               className="font-bold text-sm sm:text-base leading-tight max-w-[200px] sm:max-w-xs"
               style={{ color: "#581C87" }}
             >
-              The House of Prayer of the Living God
+              The House of Prayer
             </span>
           </Link>
 

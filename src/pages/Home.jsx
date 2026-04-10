@@ -7,7 +7,7 @@ function Welcome() {
     <section style={{ backgroundColor: "#581C87" }} className="py-16 px-6">
       <FadeIn className="max-w-3xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
-          Welcome to The House of Prayer of the Living God, Inc.
+          Welcome to The House of Prayer of the Living God
         </h2>
         <div
           className="mx-auto mt-4 mb-6 h-1 w-20 rounded"

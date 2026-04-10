@@ -26,7 +26,7 @@ export default function Hero() {
         >
           The House of<br />
           Prayer of the<br />
-          Living God, Inc.
+          Living God
         </h1>
       </div>
 

@@ -97,28 +97,6 @@ function ServiceTypes() {
   );
 }
 
-/* ─── Section 5 – CTA Banner ─────────────────────────────────────────────── */
-function CTABanner() {
-  return (
-    <section className="py-16 px-6 text-center" style={{ backgroundColor: PURPLE }}>
-      <FadeIn>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
-          Ready To Join Us?
-        </h2>
-        <p className="text-base sm:text-lg font-semibold mb-8" style={{ color: GOLD }}>
-          Sunday 11:30 AM &nbsp;·&nbsp; Thursday 6:00 PM
-        </p>
-        <a
-          href="#visit"
-          className="inline-block px-8 py-3 rounded font-bold text-sm sm:text-base transition-opacity hover:opacity-85 shadow-lg"
-          style={{ backgroundColor: GOLD, color: PURPLE }}
-        >
-          Plan Your Visit
-        </a>
-      </FadeIn>
-    </section>
-  );
-}
 
 /* ─── Service Page ───────────────────────────────────────────────────────── */
 export default function Service() {
@@ -127,7 +105,6 @@ export default function Service() {
       <section id="services" />
       <PhotoGrid />
       <ServiceTypes />
-      <CTABanner />
     </>
   );
 }

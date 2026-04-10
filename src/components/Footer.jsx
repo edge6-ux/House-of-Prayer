@@ -6,6 +6,8 @@ const quickLinks = [
   { label: "Vision & Mission", to: "/vision" },
   { label: "Services", to: "/service" },
   { label: "Visit Us", to: "/visit" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Donate", to: "/donate" },
 ];
 
 export default function Footer() {

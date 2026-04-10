@@ -7,6 +7,8 @@ const navLinks = [
   { label: "Vision & Mission", to: "/vision" },
   { label: "Service", to: "/service" },
   { label: "Visit Us", to: "/visit" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Donate", to: "/donate" },
 ];
 
 export default function Navbar() {

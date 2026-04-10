@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import FadeIn from "../components/FadeIn";
 
@@ -100,7 +101,7 @@ function Scripture() {
 /* ─── Section 5 – Quick Links ───────────────────────────────────────────── */
 const quickCards = [
   {
-    href: "#about",
+    to: "/about",
     label: "About Us",
     description:
       "Learn about our history, our leadership, and the community that makes our church a spiritual home.",
@@ -111,7 +112,7 @@ const quickCards = [
     ),
   },
   {
-    href: "#vision",
+    to: "/vision",
     label: "Vision & Mission",
     description:
       "Discover the vision and mission that drives everything we do as a congregation committed to God's purpose.",
@@ -123,7 +124,7 @@ const quickCards = [
     ),
   },
   {
-    href: "#visit",
+    to: "/visit",
     label: "Visit Us",
     description:
       "Find our location, service times, and everything you need to know before your first visit to our church.",
@@ -142,7 +143,7 @@ function QuickLinks() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {quickCards.map((card, i) => (
-            <FadeIn key={card.href} delay={i * 120}>
+            <FadeIn key={card.to} delay={i * 120}>
               <div
                 className="flex flex-col items-center text-center gap-4 bg-white rounded-lg px-6 py-8 shadow-sm border h-full"
                 style={{ borderColor: "rgba(46,0,84,0.1)" }}
@@ -152,13 +153,13 @@ function QuickLinks() {
                   {card.label}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
-                <a
-                  href={card.href}
+                <Link
+                  to={card.to}
                   className="mt-auto text-sm font-semibold transition-opacity hover:opacity-75"
                   style={{ color: "#FFD700", textDecoration: "underline", textUnderlineOffset: "3px" }}
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </FadeIn>
           ))}

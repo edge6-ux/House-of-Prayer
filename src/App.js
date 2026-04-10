@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -8,17 +9,21 @@ import VisitUs from "./pages/VisitUs";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
-        <Home />
-        <About />
-        <VisionMission />
-        <Service />
-        <VisitUs />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/vision" element={<VisionMission />} />
+            <Route path="/service" element={<Service />} />
+            <Route path="/visit" element={<VisitUs />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

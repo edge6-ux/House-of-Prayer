@@ -32,8 +32,8 @@ export default function Hero() {
 
       {/* Bottom-center bouncing chevron */}
       <a
-        href="#about"
-        aria-label="Scroll down"
+        href="/about"
+        aria-label="Go to About page"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce"
       >
         <svg

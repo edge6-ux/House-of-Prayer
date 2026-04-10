@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Vision & Mission", href: "#vision" },
-  { label: "Service", href: "#services" },
-  { label: "Visit Us", href: "#visit" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Donate", href: "#donate" },
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Vision & Mission", to: "/vision" },
+  { label: "Service", to: "/service" },
+  { label: "Visit Us", to: "/visit" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
     <nav
@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo + Church Name */}
-          <a href="#home" className="flex items-center gap-3 flex-shrink-0 hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center gap-3 flex-shrink-0 hover:opacity-80 transition-opacity">
             <img
               src="/button2.png"
               alt="House of Prayer Logo"
@@ -32,21 +32,26 @@ export default function Navbar() {
               className="font-bold text-sm sm:text-base leading-tight max-w-[200px] sm:max-w-xs"
               style={{ color: "#581C87" }}
             >
-              The House of Prayer of the Living God, Inc.
+              The House of Prayer of the Living God
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.to}
+                to={link.to}
                 className="text-sm font-medium transition-colors hover:opacity-70"
-                style={{ color: "#581C87" }}
+                style={{
+                  color: "#581C87",
+                  fontWeight: pathname === link.to ? "700" : "500",
+                  borderBottom: pathname === link.to ? "2px solid #FFD700" : "2px solid transparent",
+                  paddingBottom: "2px",
+                }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -80,24 +85,20 @@ export default function Navbar() {
           style={{ backgroundColor: "#ffffff", borderColor: "rgba(88,28,135,0.15)" }}
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <Link
+              key={link.to}
+              to={link.to}
               onClick={() => setMenuOpen(false)}
               className="text-sm font-medium py-1 border-b transition-opacity hover:opacity-70"
-              style={{ color: "#581C87", borderColor: "rgba(88,28,135,0.1)" }}
+              style={{
+                color: "#581C87",
+                borderColor: "rgba(88,28,135,0.1)",
+                fontWeight: pathname === link.to ? "700" : "500",
+              }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#donate"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 text-center px-4 py-2 rounded font-semibold text-sm transition-opacity hover:opacity-80"
-            style={{ backgroundColor: "#581C87", color: "#ffffff" }}
-          >
-            Give Now
-          </a>
         </div>
       )}
     </nav>

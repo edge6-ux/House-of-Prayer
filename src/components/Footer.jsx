@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
+
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Vision & Mission", href: "#vision" },
-  { label: "Services", href: "#services" },
-  { label: "Visit Us", href: "#visit" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Donate", href: "#donate" },
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Vision & Mission", to: "/vision" },
+  { label: "Services", to: "/service" },
+  { label: "Visit Us", to: "/visit" },
 ];
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
               className="text-xl font-bold leading-snug"
               style={{ color: "#FFD700" }}
             >
-              The House of Prayer of the Living God, Inc.
+              The House of Prayer of the Living God
             </h2>
             <p className="text-sm text-gray-300 leading-relaxed">
               A place of worship, community, and spiritual growth — rooted in
@@ -57,13 +57,13 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-2">
               {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
                     className="text-sm text-gray-300 transition-colors hover:text-white"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -117,7 +117,7 @@ export default function Footer() {
         className="border-t py-4 text-center text-xs text-gray-400"
         style={{ borderColor: "rgba(255,215,0,0.2)" }}
       >
-        &copy; {new Date().getFullYear()} The House of Prayer of the Living God, Inc. All rights reserved.
+        &copy; {new Date().getFullYear()} The House of Prayer of the Living God. All rights reserved.
       </div>
     </footer>
   );

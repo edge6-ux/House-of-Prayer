@@ -29,7 +29,7 @@ function WhoWeAre() {
         </h2>
         <div className="mx-auto mb-8 h-1 w-16 rounded" style={{ backgroundColor: "#FFD700" }} />
         <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-          The House of Prayer of the Living God, Inc. is a Spirit-filled community of
+          The House of Prayer of the Living God is a Spirit-filled community of
           believers located in Immokalee, Florida. Founded on faith, prayer, and the
           uncompromising Word of God, we are a family united by our love for Jesus
           Christ and our commitment to serving one another and our community. We
@@ -121,7 +121,30 @@ function Leadership() {
   );
 }
 
-/* ─── Section 4 – Scripture Banner ──────────────────────────────────────── */
+/* ─── Section 4 – Overseer's Message ────────────────────────────────────── */
+function OverseerMessage() {
+  return (
+    <section className="py-16 px-6 bg-white">
+      <FadeIn className="max-w-3xl mx-auto text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: "#4B0082" }}>
+          A Message from the Overseer
+        </h2>
+        <div className="mx-auto mb-8 h-1 w-16 rounded" style={{ backgroundColor: "#FFD700" }} />
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
+            src="https://www.youtube.com/embed/zxQqLKY0wuI"
+            title="A Message from the Overseer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </FadeIn>
+    </section>
+  );
+}
+
+/* ─── Section 5 – Scripture Banner ──────────────────────────────────────── */
 function Scripture() {
   return (
     <section className="py-16 px-6" style={{ backgroundColor: "#4B0082" }}>
@@ -150,6 +173,7 @@ export default function About() {
       <PageHero />
       <WhoWeAre />
       <Leadership />
+      <OverseerMessage />
       <Scripture />
     </>
   );
